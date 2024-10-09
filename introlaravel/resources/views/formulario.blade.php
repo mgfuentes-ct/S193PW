@@ -1,5 +1,6 @@
 
 @extends('layouts.plantilla')
+@section('titulo','Formulario')
 
 @section('contenido')  <!-- comienza aqui -->
 

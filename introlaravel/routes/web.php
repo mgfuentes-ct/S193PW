@@ -21,3 +21,5 @@ use Illuminate\Support\Facades\Route;
 Route::view('/','inicio')->name('rutaInicio');
 Route::view('/form','formulario')->name('rutaForm');
 Route::view('/consultar','clientes')->name('rutaClientes');
+
+    Route::view('/component','componentes')->name('rutacomponent');
