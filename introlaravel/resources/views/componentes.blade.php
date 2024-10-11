@@ -14,4 +14,8 @@
     Soy el contenido del segundo
 </x-Card>
 
+<x-Alert tipo="danger"> rojo </x-Alert>
+
+<x-Alert tipo="warning"> amarillo </x-Alert>
+
 @endsection
