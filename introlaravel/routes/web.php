@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ControladorVista;
 
 /* Route::get('/', function () {
     return view('inicio');
@@ -17,9 +18,17 @@ use Illuminate\Support\Facades\Route;
 
 
 
-/* RUTAS DE TIPO VIEW  */
-Route::view('/','inicio')->name('rutaInicio');
+/* RUTAS DE TIPO VIEW (YA NO BNOS SERAN UTILES) */
+/*Route::view('/','inicio')->name('rutaInicio');
 Route::view('/form','formulario')->name('rutaForm');
-Route::view('/consultar','clientes')->name('rutaClientes');
+Route::view('/consultar','clientes')->name('rutaClientes'); */
 
-    Route::view('/component','componentes')->name('rutacomponent');
+Route::view('/component','componentes')->name('rutacomponent');
+
+Route::get('/', [ControladorVista::class, 'home'])->name('rutaInicio');
+
+
+Route::get('/form', [ControladorVista::class, 'formulario'])->name('rutaForm');
+
+
+Route::get('/consultar', [ControladorVista::class, 'consulta'])->name('rutaClientes');
