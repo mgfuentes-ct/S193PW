@@ -11,22 +11,24 @@
                 Registro de Clientes
             </div>
             <div class="card-body text-justify ">
-                <form>
+                <form action="/enviarCliente" method="POST">
+                    @csrf
+                    
                     <div class="mb-3">
                         <Label for="nombre" class="form-label">Nombre: </label> 
-                        <input type="text" class="form-control" id="nombre" >
+                        <input type="text" class="form-control" name="txtnombre" >
                     </div>
                     <div class="mb-3">
                         <Label for="Apellido" class="form-label">Apellido: </label> 
-                        <input type="text" class="form-control" id="apellido" >
+                        <input type="text" class="form-control" name="txtapellido" >
                     </div>
                     <div class="mb-3">
                         <label for="correo" class="form-label">Correo: </label>
-                        <input type="email" class="form-control" id="correo" >
+                        <input type="email" class="form-control" name="txtcorreo" >
                     </div>
                     <div class="mb-3">
                         <label for="telefono" class="form-label">Telefono: </label>
-                        <input type="number" class="form-control" id="telefono" >
+                        <input type="number" class="form-control" name="txttelefono" >
                     </div>
             </div>
             <div class="card-footer text-muted">
