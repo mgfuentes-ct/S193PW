@@ -9,3 +9,8 @@ use App\Http\Controllers\ControladorLogica;
 Route::view('/component','componentes')->name('rutacomponent');
 Route::get('/',[controladorLogica::class, 'inicio'])->name('rutaInicio');
 Route::get('/repaso1',[controladorLogica::class, 'repaso1'])->name('rutaConvertidor');
+
+
+
+//ruta para la info
+Route::post('enviarDatosMB',[ControladorLogica::class, 'datos'])->name('enviarDatosMB');

@@ -13,4 +13,9 @@ class controladorLogica extends Controller
     public function repaso1(){
         return view('repaso1');
     }
+
+    public function datos(Request $datos){
+        //return 'prueba';
+        return $datos->all();
+    }
 }

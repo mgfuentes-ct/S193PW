@@ -8,7 +8,8 @@
 <div class="container mt-5 col-md-6" style="background-color: #f5e6e2;" >
   <div class="card-body" >
   <h1>MB</h1>
-    <form >
+    <form action="/enviarDatosMB" method="POST">
+        @csrf
         <div class="mb-3">
             <label for="unidadMB" class="form-label">Escriba la cantidad a convertir... </label>
             <input type="text" class="form-control" name="txtunidadMB">
