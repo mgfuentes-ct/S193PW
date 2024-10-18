@@ -18,8 +18,8 @@
             <label for="resultadoMB" class="form-label">Resultado:</label>
             <!--<input type="text" class="form-control" name="txtresultadoMB">-->
         </div>
-        <button type="submit" class="btn btn-dark">GB</button>
-        <button type="submit" class="btn btn-dark">TB</button>
+        <button type="submit" class="btn btn-dark" name="btnMBGB">GB</button>
+        <button type="submit" class="btn btn-dark" name="btnMBTB">TB</button>
 
     </form><BR>
   </div>
@@ -37,8 +37,8 @@
             <label for="resultadoGB" class="form-label">Resultado:</label>
             <!--<input type="text" class="form-control" name="txtresultadoGB">-->
         </div>
-        <button type="submit" class="btn btn-dark">MB</button>
-        <button type="submit" class="btn btn-dark">TB</button>
+        <button type="submit" class="btn btn-dark" name="btn">MB</button>
+        <button type="submit" class="btn btn-dark" name="btn">TB</button>
 
     </form><br>
   </div>
@@ -57,8 +57,8 @@
             <label for="resultadoTB" class="form-label">Resultado:</label>
             <!--<input type="text" class="form-control" name="txtresultadoTB">-->
         </div>
-        <button type="submit" class="btn btn-dark">MB</button>
-        <button type="submit" class="btn btn-dark">GB</button>
+        <button type="submit" class="btn btn-dark" name="btn">MB</button>
+        <button type="submit" class="btn btn-dark" name="btn">GB</button>
 
     </form><br>
   </div>
