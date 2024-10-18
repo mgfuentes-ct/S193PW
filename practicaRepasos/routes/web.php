@@ -14,3 +14,5 @@ Route::get('/repaso1',[controladorLogica::class, 'repaso1'])->name('rutaConverti
 
 //ruta para la info
 Route::post('enviarDatosMB',[ControladorLogica::class, 'datos'])->name('enviarDatosMB');
+Route::post('enviarDatosGB',[ControladorLogica::class, 'datos1'])->name('enviarDatosGB');
+Route::post('enviarDatosTB',[ControladorLogica::class, 'datos2'])->name('enviarDatosTB');

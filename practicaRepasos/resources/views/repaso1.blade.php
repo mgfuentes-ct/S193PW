@@ -28,7 +28,8 @@
 <div class="container mt-5 col-md-6" style="background-color: #f5e6e2;">
   <div class="card-body" >
   <h1>GB</h1>
-    <form >
+    <form action="/enviarDatosGB" method="POST">
+    @csrf
         <div class="mb-3">
             <label for="unidadGB" class="form-label">Escriba la cantidad a convertir... </label>
             <input type="text" class="form-control" name="txtunidadGB">
@@ -37,8 +38,8 @@
             <label for="resultadoGB" class="form-label">Resultado:</label>
             <!--<input type="text" class="form-control" name="txtresultadoGB">-->
         </div>
-        <button type="submit" class="btn btn-dark" name="btn">MB</button>
-        <button type="submit" class="btn btn-dark" name="btn">TB</button>
+        <button type="submit" class="btn btn-dark" name="btnGBMB">MB</button>
+        <button type="submit" class="btn btn-dark" name="btnGBTB">TB</button>
 
     </form><br>
   </div>
@@ -48,7 +49,8 @@
 <div class="container mt-5 col-md-6" style="background-color: #f5e6e2;">
   <div class="card-body" >
   <h1>TB</h1>
-    <form >
+    <form action="/enviarDatosTB" method="POST">
+    @csrf
         <div class="mb-3">
             <label for="unidadTB" class="form-label">Escriba la cantidad a convertir... </label>
             <input type="text" class="form-control" name="txtunidadTB" aria-describedby="emailHelp">
@@ -57,8 +59,8 @@
             <label for="resultadoTB" class="form-label">Resultado:</label>
             <!--<input type="text" class="form-control" name="txtresultadoTB">-->
         </div>
-        <button type="submit" class="btn btn-dark" name="btn">MB</button>
-        <button type="submit" class="btn btn-dark" name="btn">GB</button>
+        <button type="submit" class="btn btn-dark" name="btnTBMB">MB</button>
+        <button type="submit" class="btn btn-dark" name="btnTBGB">GB</button>
 
     </form><br>
   </div>
