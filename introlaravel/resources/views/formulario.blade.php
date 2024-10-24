@@ -17,9 +17,9 @@
 
         @session('exito')
             {! <script>Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
-            icon: "success"
+            title: "Respuesta Servidor", //titulo del mensaje
+            text: '{{ $value }}', //texto en el mensaje 
+            icon: "success" //icno para el alert
             }); </script> !}
         @endsession
 
@@ -41,11 +41,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="correo" class="form-label">Correo: </label>
-                        <input type="email" class="form-control" name="txtcorreo" >
+                        <input type="text" class="form-control" name="txtcorreo" >
                     </div>
                     <div class="mb-3">
                         <label for="telefono" class="form-label">Telefono: </label>
-                        <input type="number" class="form-control" name="txttelefono" >
+                        <input type="text" class="form-control" name="txttelefono" >
                     </div>
             </div>
             <div class="card-footer text-muted">

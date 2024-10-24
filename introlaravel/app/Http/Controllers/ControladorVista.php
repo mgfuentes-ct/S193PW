@@ -6,51 +6,83 @@ use Illuminate\Http\Request;
 
 class ControladorVista extends Controller
 {
-    /*USAMOS ENSTE CONTROLADOR PARA ADMINISTARR LA LOGICA DE LAS VISTAS*/ 
+    //usamos este controlador para dministrar la logica de las vistas
     public function home()
     {
-        //nos manda a la pagina de inicio
         return view('inicio');
     }
-
-
     public function formulario()
     {
-        //nos manda a la pagina del formulario
         return view('formulario');
     }
-
     public function consulta()
     {
-        //nos manda a la pagina de los clientes
         return view('clientes');
     }
 
     public function procesarCliente(Request $peticion)
     {
-        //nos manda a la pagina de los clientes
-        //return 'Si llego la info del cliente :)'; //es una cadena de texto 
-        //return $peticion->all();
-        //return $peticion->path();
-        //return $peticion->url();
-        //return $peticion->ip();
+        //return 'si llego la info del cliente :(';
+        //mostramos todo lo que trae la ppeticion
+       // return $peticion->ip();
 
-        //respuestas de redireccion 
+        //respuestas de redireccion
+       // return redirect('/');
 
-        //return redirect('/');   //sejecuta cuando se haga el clic al formulario y hace la redireccion
+       //redireccion usando el nombre de la ruta
+      // return redirect()->route('rutaclientes');
 
-        //return redirect()->route('rutaClientes');
+       //redireccion al origen de la peticion
+      // return back();
 
-        // redirige al origen de la peticion (regresate por donde vienes)
-        //return back();
+     // $id= [['usuario'=>1],['usuario'=>2]];
 
-        //redireccion con variable 
-        //$id = [['usuario'=>1],['usuario'=>2]];
-        //return view('formulario',compact('id'));
+      //return view('formulario',compact('id'));
 
+
+      $validacion= $peticion->validate([
+        'txtnombre'=> 'required|min:4 |max:20 ',
+        'txtapellido'=> 'required',
+        'txtcorreo'=> 'required',
+        'txttelefono'=> 'required|numeric'
+      ]);
+
+      //redireccion con un mensaje flash
         $usuario = $peticion->input('txtnombre');
         session()->flash('exito','Se guardo el usuario: '.$usuario);
 
         return to_route('rutaForm');
-    } 
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
