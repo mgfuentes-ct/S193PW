@@ -15,20 +15,20 @@
     {{-- inicia navbar --}}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-        <a class="navbar-brand">Turista sin Maps</a>
+        <a class="navbar-brand">{{__('Turista sin Maps')}}</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="{{route('rutaInicio')}}">Inicio</a>
+                <a class="nav-link" aria-current="page" href="{{route('rutaInicio')}}">{{__('Inicio')}}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('rutaForm')?'text-warning':'' }}" href="{{route('rutaForm')}}">Registro Clientes</a> <!--Buscafr comop funciona este codigo-->
+                <a class="nav-link {{ request()->routeIs('rutaForm')?'text-warning':'' }}" href="{{route('rutaForm')}}">{{__('Registro Clientes')}}</a> <!--Buscafr comop funciona este codigo-->
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('rutaClientes')?'text-warning':'' }}" href="{{route('rutaClientes')}}">Consulta Clientes</a>
+                <a class="nav-link {{ request()->routeIs('rutaClientes')?'text-warning':'' }}" href="{{route('rutaClientes')}}">{{__('Consulta Clientes')}}</a>
             </li>
             </ul>
         </div>
