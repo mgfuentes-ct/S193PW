@@ -9,7 +9,8 @@
                 <h1>Registro de Libro</h1>
             </div>
             <div class="card-body text-justify">
-                <form>
+                <form action="/enviarLibro" method="POST">
+                    @csrf
                 <div class="mb-3">
                     <label for="isbn" class="form-label">ISBN</label>
                     <input type="text" class="form-control" name="txtisbn">

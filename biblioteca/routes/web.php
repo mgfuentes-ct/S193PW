@@ -10,3 +10,5 @@ Route::view('/component','componentes')->name('rutacomponent');
 
 Route::get('/',[Controladorvista::class, 'home'])->name('rutainicio');
 Route::get('/form',[Controladorvista::class, 'formulario'])->name('rutaregistro');
+
+Route::post('/enviarLibro',[Controladorvista::class,'procesarLibro'])->name('rutaEnviar');

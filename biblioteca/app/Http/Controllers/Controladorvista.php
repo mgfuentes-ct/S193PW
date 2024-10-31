@@ -16,4 +16,9 @@ class Controladorvista extends Controller
         return view('registro_libro');
     }
 
+    public function procesarLibro(Request $peticion)
+    {
+        //return 'Info recibida';
+        return $peticion->all();
+    }
 }
