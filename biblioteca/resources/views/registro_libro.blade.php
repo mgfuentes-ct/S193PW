@@ -1,5 +1,5 @@
 @extends('layouts.plantilla')
-
+@section('titulo','Registro')
 @section('contenido')
 <br><br>
 <div class="d-flex justify-content-center mt-5">
