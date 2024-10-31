@@ -1,48 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    @vite(['resources/js/app.js'])
-</head>
-<body>
-    {{-- inicia navbar --}}
-    <nav class="navbar bg-body-tertiary fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Biblioteca UPQ</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Más</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+@extends('layouts.plantilla')
+
+@section('contenido')
+<br><br>
+<div class="d-flex justify-content-center mt-5">
+    <div class="col-md-6 col-lg-6">
+        <div class="card">
+            <div class="card-header fs-5 text-center">
+                <h1>Registro de Libro</h1>
+            </div>
+            <div class="card-body text-justify">
+                <form>
+                <div class="mb-3">
+                    <label for="isbn" class="form-label">ISBN</label>
+                    <input type="text" class="form-control" name="txtisbn">
+                </div>
+                <div class="mb-3">
+                    <label for="titulo" class="form-label">Titulo</label>
+                    <input type="text" class="form-control" name="txttitulo">
+                </div>
+                <div class="mb-3">
+                    <label for="autor" class="form-label">Autor</label>
+                    <input type="text" class="form-control" name="txtautor">
+                </div>
+                <div class="mb-3">
+                    <label for="paginas" class="form-label">Páginas</label>
+                    <input type="text" class="form-control" name="txtpaginas">
+                </div>
+                <div class="mb-3">
+                    <label for="año" class="form-label">Año</label>
+                    <input type="text" class="form-control" name="txtaño">
+                </div>
+                <div class="mb-3">
+                    <label for="editarial" class="form-label">Editorial</label>
+                    <input type="text" class="form-control" name="txteditorial">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email de Editorial</label>
+                    <input type="text" class="form-control" name="txtemail">
+                </div>
+                <button type="submit" class="btn btn-outline-success btn-lg">Enviar</button>
+                </form>
+            </div>
+            
         </div>
-        <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Registro del libro</a>
-            </li>
-            </ul>
-        </div>
-        </div>
+        
     </div>
-    </nav>
-    {{-- Finaliza navbar --}}
-
-    <!-- Especificamos donde ira el contenido -->
-     @yield('contenido')
+    
+</div><br><br>
 
 
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">©Biblioteca UPQ</h5>
-            <p class="card-text">31 de Octubre del 2024</p>
-        </div>
-    </div>
-</body>
-</html>
+@endsection
