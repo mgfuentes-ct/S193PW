@@ -6,6 +6,9 @@
     <title>@yield('titulo')</title>
     @vite(['resources/js/app.js'])
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 </head>
 <body class="d-flex flex-column min-vh-100">
     {{-- inicia navbar --}}

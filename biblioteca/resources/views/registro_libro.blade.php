@@ -2,12 +2,23 @@
 @section('titulo','Registro')
 @section('contenido')
 <br><br>
+{{--@dump($id)--}}
 <div class="d-flex justify-content-center mt-5">
     <div class="col-md-6 col-lg-6">
+
+
         <div class="card">
             <div class="card-header fs-5 text-center">
                 <h1>Registro de Libro</h1>
             </div>
+            
+            @session('EXITO')
+                {!<script>Swal.fire({
+                title: "Respuesta del servidor",
+                text: "{{ $value }}",
+                icon: "success"
+                });</script>!}
+            @endsession
             <div class="card-body text-justify">
                 <form action="/enviarLibro" method="POST">
                     @csrf
