@@ -10,4 +10,7 @@ use App\Http\Controllers\ControladorLogica;
 
 Route::view('/component','componentes')->name('rutacomponent');
 
-Route::get('/',[ControladorLogica::class,'formulario'])->name('rutaformulario');
+Route::get('/',[ControladorLogica::class,'registro'])->name('rutainicio');
+Route::get('/form',[ControladorLogica::class,'registro'])->name('rutaformulario');
+
+Route::post('/enviarPrenda',[ControladorLogica::class,'procesarprenda'])->name('rutaprenda');
