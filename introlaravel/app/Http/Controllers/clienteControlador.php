@@ -58,7 +58,9 @@ class clienteControlador extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $consultaclientes = DB::table('clientes')->where('id',$id)->first();
+        
+        return view('actualizar',compact('consultaclientes'));
     }
 
     /**

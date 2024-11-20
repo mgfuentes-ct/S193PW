@@ -24,7 +24,7 @@
         </div>
 
         <div class="card-footer text-muted">
-        <a type="submit" class="btn btn-warning btn-sm" href="{{route('rutaActualizar')}}">{{__('Actualizar')}}</a>
+        <a type="submit" class="btn btn-warning btn-sm" href="{{route('rutaActualizar', $cliente->id)}}">{{__('Actualizar')}}</a>
         <a type="submit" class="btn btn-danger btn-sm">{{__('Eliminar')}}</a>
         </div>
 

@@ -41,3 +41,5 @@ Route::get('/cliente/create', [clienteControlador::class, 'create'])->name('ruta
 Route::post('/cliente',[clienteControlador::class, 'store'])->name('rutaEnviar');
 
 Route::get('/cliente', [clienteControlador::class, 'index'])->name('rutaClientes');
+
+Route::get('/cliente/{id}', [clienteControlador::class, 'edit'])->name('rutaActualizar'); //ruta para editar y trae condigo el id
