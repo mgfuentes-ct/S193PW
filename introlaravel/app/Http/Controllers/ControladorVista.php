@@ -16,6 +16,12 @@ class ControladorVista extends Controller
     {
         return view('formulario');
     } */
+
+    public function actualizar()
+    {
+        return view('actualizar');
+    }
+    
     public function consulta()
     {
         

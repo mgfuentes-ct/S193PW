@@ -28,6 +28,7 @@ Route::view('/component','componentes')->name('rutacomponent');
 
 Route::get('/', [ControladorVista::class, 'home'])->name('rutaInicio');
 
+Route::get('/actualizar', [ControladorVista::class, 'actualizar'])->name('rutaActualizar');
 
 Route::get('/consultar', [ControladorVista::class, 'consulta'])->name('rutaClientes');
 
