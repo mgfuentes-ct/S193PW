@@ -12,16 +12,21 @@
 
             
         @if(session('exito'))
-            <x-Alert tipo="success">{{session('exito')}}</x-Alert>
+        <script>
+            Swal.fire({
+                title: "Actualización exitosa",
+                text: "{{ session('exito') }}",
+                icon: "success",
+                confirmButtonText: "OK"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "{{ route('rutaClientes') }}";
+                }
+            });
+        </script>
         @endif
 
-        @session('exito')
-            {! <script>Swal.fire({
-            title: "Respuesta Servidor", //titulo del mensaje
-            text: '{{ $value }}', //texto en el mensaje 
-            icon: "success" //icno para el alert
-            }); </script> !}
-        @endsession
+
 
             <div class="card font-monospace">
             <div class="card-header fs-5 text-center text-primary">

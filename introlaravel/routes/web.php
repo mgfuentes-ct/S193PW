@@ -45,3 +45,5 @@ Route::get('/cliente', [clienteControlador::class, 'index'])->name('rutaClientes
 Route::get('/cliente/{id}', [clienteControlador::class, 'edit'])->name('rutaActualizar'); //ruta para editar y trae condigo el id
 
 Route::post('/actualizar/{id}', [clienteControlador::class, 'update'])->name('rutaEnviarActualizar'); //ruta para actualizar
+
+Route::get('/cliente/eliminar/{id}', [clienteControlador::class, 'destroy'])->name('rutaEliminar'); //ruta para eliminar

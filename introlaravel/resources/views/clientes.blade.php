@@ -6,6 +6,28 @@
 
     {{-- Inicia tarjetaCliente --}}
     <div class="container mt-5 col-md-8">
+        
+    <script>
+        function confirmDelete(clienteId){
+            Swal.fire({
+                title: "¿Estás seguro de eliminar este cliente?",
+                text: "Esta acción no se puede deshacer",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: 'Eliminar',
+                cancelButtonText: 'Cancelar',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire('Cliente eliminado correctamente', '', 'success').then((result) => {
+                        if (result.isConfirmed) {
+                            window.location.href = "/cliente/eliminar/" + clienteId;
+                        }
+                    });
+                }
+            });
+        }
+    </script>
 
     @foreach ($consultaclientes as $cliente)
 
@@ -25,7 +47,7 @@
 
         <div class="card-footer text-muted">
         <a type="submit" class="btn btn-warning btn-sm" href="{{route('rutaActualizar', $cliente->id)}}">{{__('Actualizar')}}</a>
-        <a type="submit" class="btn btn-danger btn-sm">{{__('Eliminar')}}</a>
+        <a type="submit" class="btn btn-danger btn-sm" onclick="confirmDelete({{ $cliente->id }})">{{__('Eliminar')}}</a>
         </div>
 
 

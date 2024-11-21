@@ -71,6 +71,13 @@ class clienteControlador extends Controller
     {
         //aqui estara la logica para editar
 
+        $validar = $request->validate([
+            'txtnombre'=> 'required|min:4 |max:20 ',
+            'txtapellido'=> 'required',
+            'txtcorreo'=> 'required|email',
+            'txttelefono'=> 'required|numeric'
+        ]);
+
         DB::table('clientes')->where('id',$id)->update([
             "nombre" => $request->input('txtnombre'),
             "apellido" => $request->input('txtapellido'),
@@ -79,7 +86,8 @@ class clienteControlador extends Controller
             "updated_at" => Carbon::now(),
         ]);
 
-        /* return redirect()->route('rutaActualizar'); */
+        session()->flash('exito','Se actualizo el usuario corretamente');
+        return redirect()->route('rutaActualizar',['id'=>$id]);
     }
 
     /**
@@ -87,6 +95,9 @@ class clienteControlador extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        DB::table('clientes')->where('id',$id)->delete();
+
+        session()->flash('exito','Se elimino el usuario correctamente');
+        return redirect()->route('rutaClientes');
     }
 }
