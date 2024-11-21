@@ -28,7 +28,7 @@
                  {{__('Actualizar Clientes') }}
             </div>
             <div class="card-body text-justify ">
-                <form action="{{route('rutaEnviar')}}" method="POST">
+                <form action="{{route('rutaEnviarActualizar', $consultaclientes->id)}}" method="POST"> {{-- se agrega la nueva ruta de actualizacion con el id porque si no no funciona--}}
                     @csrf
                     
                     <div class="mb-3">

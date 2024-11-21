@@ -41,7 +41,9 @@ class clienteControlador extends Controller
         ]);
 
         $usuario = $request->input('txtnombre');
+
         session()->flash('exito','Se guardo el usuario: '.$usuario);
+
         return to_route('rutaForm');
     }
 
@@ -58,9 +60,8 @@ class clienteControlador extends Controller
      */
     public function edit(string $id)
     {
-        $consultaclientes = DB::table('clientes')->where('id',$id)->first();
-        
-        return view('actualizar',compact('consultaclientes'));
+        $consultaclientes = DB::table('clientes')->where('id', $id)->first();
+        return view('actualizar', compact('consultaclientes'));
     }
 
     /**
@@ -68,7 +69,17 @@ class clienteControlador extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        //aqui estara la logica para editar
+
+        DB::table('clientes')->where('id',$id)->update([
+            "nombre" => $request->input('txtnombre'),
+            "apellido" => $request->input('txtapellido'),
+            "correo" => $request->input('txtcorreo'),
+            "telefono" => $request->input('txttelefono'),
+            "updated_at" => Carbon::now(),
+        ]);
+
+        /* return redirect()->route('rutaActualizar'); */
     }
 
     /**
