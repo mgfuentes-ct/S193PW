@@ -7,15 +7,18 @@
     {{-- Inicia tarjetaCliente --}}
     <div class="container mt-5 col-md-8">
 
+        @foreach ($consulta as $cliente)
+        
+
     <div class="card text-justify font-monospace">
 
         <div class="card-header fs-5 text-primary">
-        Maria Guadalupe Fuentes Acosta
+            {{$cliente->nombre}} - {{$cliente->apellido}}
         </div>
 
         <div class="card-body">
-        <h5 class="fw-bold">mg.fuentes12@outlook.com</h5>
-        <h5 class="fw-medium">4481028843</h5>
+        <h5 class="fw-bold">{{$cliente->correo}}</h5>
+        <h5 class="fw-medium">{{$cliente->telefono}}</h5>
         <p class="card-text fw-lighter"></p>
         </div>
 
@@ -25,7 +28,7 @@
         </div>
 
     </div>
-
+    @endforeach
     </div>
     {{-- Finaliza tarjetaCliente --}}
 
