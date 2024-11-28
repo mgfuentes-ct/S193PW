@@ -23,8 +23,15 @@
         </div>
 
         <div class="card-footer text-muted">
-        <button type="submit" class="btn btn-warning btn-sm">{{__('Actualizar')}}</button>
-        <button type="submit" class="btn btn-danger btn-sm">{{__('Eliminar')}}</button>
+            <a href="{{ route('cliente.edit', $cliente->id) }}" class="btn btn-warning btn-sm">{{__('Actualizar')}}</a>
+
+            <form action="{{ route('cliente.destroy', $cliente->id) }}" method="POST" class="d-inline">
+                @csrf
+                @method('DELETE') <!-- Método HTTP DELETE -->
+                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('¿Está seguro de eliminar este cliente?')">
+                    {{__('Eliminar')}}
+                </button>
+            </form>
         </div>
 
     </div>
